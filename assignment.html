@@ -1,0 +1,163 @@
+<script>
+/*Question 1:*/
+function reversestring(string)
+{
+  return string.split("").reverse().join("")
+}
+var x=reversestring("Hello World");
+console.log(x);
+
+/*question 2:*/
+function reversestring(string)
+{
+    var x=string.split("");
+    var a=x.splice(0,x.indexOf(" ")).reverse();
+    var b=x.splice(x.indexOf(" ")+1,x.length-1).reverse();
+    var d=a.join("");
+    var e=b.join("");
+    var f=d+" "+e;
+    return f.toString();    
+}
+var c=reversestring("Hello World");
+console.log(c);
+
+/*question 3:*/
+function capital(string)
+{
+	var x=string.split(" ");
+	var array=[];
+	x.forEach(function(element)
+	{
+		array.push(element.charAt(0).toUpperCase()+element.substr(1));
+    })
+    return array.join(" ");
+}
+var y=capital("mY namE iS chIrAg");
+console.log(y);
+
+/*question 4:*/
+function capital(string)
+{
+	var x=string.split(" ");
+	var array=[];
+	x.forEach(function(element)
+	{
+		array.push(element.charAt(0).toUpperCase()+element.substr(1).toLowerCase());
+    })
+    return array.join(" ");
+}
+var y=capital("mY namE iS chIrAg");
+console.log(y);
+
+/*question 5:*/
+var capital={
+		'delhi':'Delhi',
+		'uttar pradesh':'Lucknow',
+		'haryana':'Chandigarh',
+		'punjab':'Chandigarh',
+		'uttarakhand':'Dehradoon'
+	}
+
+	var cities=[
+		{city:'Agra',state:'Uttar Pradesh'},
+		{city:'Faridabad',state:'Haryana'},
+		{city:'West delhi',state:'Delhi'},
+		{city:'Amritsar',state:'Punjab'},
+		{city:'Nainital',state:'Uttarakhand'},
+	]
+	var cityData=cities.map(function(element,index,input){
+		element.capital=capital[element.state.toLowerCase()];
+		return element;
+	})
+	console.log(cityData);
+
+/*question 6:*/
+function convert(a)
+{
+	var x=a.toString().split("");
+	var arr=[];
+	x.forEach(function(element){
+		arr.push(parseInt(element));
+	})
+	return arr;
+}
+console.log(convert(13256));
+
+/*question 7:*/
+function sum(a)
+{
+return a.reduce(function(a,b){
+	return a+b;
+})
+}
+console.log(sum([1,2,3,4]));
+
+/*question 8:*/
+function add(a,b)
+{
+	return a+b;
+}
+function sum(a)
+{
+var x=a.reduce(add);
+var arr=[];
+while(x.toString().length!=1)
+{
+	arr=[];
+	var c=x.toString().split("");
+	c.forEach(function(element){
+		arr.push(parseInt(element));
+	});
+	var d=arr.reduce(add);
+	x=d;
+}
+return x;
+}
+console.log(sum([1,2,3,4,5,14]));
+
+/*question 9 and 10:*/
+function palindrome(a)
+{
+	if(typeof a === "string")
+	{
+	    var x=a;
+	}
+	else
+	{	
+		var x=a.toString();
+	}
+        var y=x.split("").reverse().join("");
+    
+   if(y==a)
+     {
+       console.log("yes it is a palindrome");
+     }
+else
+console.log("not a palindrome");
+}
+palindrome(12321);
+
+/*question 11:*/
+function remove(a)
+{
+	for(i=0;i<a.length;i++)
+	{
+		for(j=i+1;j<a.length;j++)
+		{
+			if(a[i]==a[j])
+		    {
+			    a.splice(j,1);
+		    }
+		}
+		
+		
+	}
+	return a;
+}
+console.log(remove([1,2,3,2,4,4,6,4,6]));
+
+</script>
+
+
+
+
